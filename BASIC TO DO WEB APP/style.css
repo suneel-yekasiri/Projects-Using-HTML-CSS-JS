@@ -1,0 +1,136 @@
+footer{
+margin-top: 60px;
+text-align: center;
+   }
+body {
+font-family: Arial, sans-serif;
+background-color:aliceblue;
+margin: 10px;
+padding-top: 20px;
+padding-bottom: 20px;
+}
+h1 {
+text-align: center;
+font-size: 50px;
+color:black;
+margin-top: 50px;
+}
+h2 {
+font-size: 1.9rem;
+margin: 10px;
+margin-top: 90px;
+padding: 10px;
+color:black;
+}
+
+input[type="text"] {
+padding: 8px;
+font-size: 1rem;
+border: none;
+background-color: aqua;
+border-radius: 3px;
+margin: 20px;
+margin-right: 10px;
+width: 70%;
+}
+
+button {
+font-size: 1rem;
+background-color: #4caf50;
+color: white;
+border: none;
+border-radius: 3px;
+padding: 8px 16px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+button:hover {
+background-color: #3e8e41;
+}
+
+.task {
+margin: 20px;
+margin-right: 340px;
+background-color:aqua;
+display: flex;
+align-items: center;
+padding: 10px;
+box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+border-radius: 5px;
+overflow: hidden;
+}
+
+.task input[type="checkbox"] {
+margin-right: 10px;
+}
+
+.task span {
+flex: 1;
+font-size: 1.2rem;
+color: #333;
+}
+
+.task button
+{
+font-size: 1rem;
+background-color: #f44336;
+color: white;
+border: none;
+border-radius: 3px;
+padding: 4px 8px;
+margin-left: 10px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+/* Change the background color of the delete button on hover */
+.task button:hover {
+background-color: #d32f2f;
+}
+
+/* Style the save and delete all buttons */
+#saveBtn,
+#deleteAllBtn {
+font-size: 1rem;
+margin: 20px;
+background-color: #2196f3;
+color: white;
+border: none;
+border-radius: 3px;
+padding: 8px 16px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+margin-right: 10px;
+}
+
+
+/* Center the container */
+.container {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+margin: 20px;
+padding: 60px;
+height: 100vh;
+}
+
+
+/* Style the delete button */
+.delete-btn {
+font-size: 1rem;
+background-color: #f44336;
+color: white;
+border: none;
+border-radius: 3px;
+padding: 4px 8px;
+margin-left: 10px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+/* Change the background color of the delete button on hover */
+.delete-btn:hover {
+background-color: #d32f2f;
+}

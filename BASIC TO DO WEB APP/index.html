@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>A BASIC TO-DO WEBAPP</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/5f59ca6ad3.js" crossorigin="anonymous"></script>
+  
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+	<h1>TODO LIST WEBAPP</h1>
+    <div class="Container">
+    <h2>Create Task</h2>
+	<input type="text" id="taskInput"placeholder="What task needs to be done?" required/>
+	<button id="createBtn">Create</button>
+    <span class="save-message"></span>
+    <br>
+
+    <h2>My Tasks</h2>
+	<div id="myTasks">
+		<!-- Tasks will be added dynamically here -->
+	</div>
+    <br>
+	<button id="saveBtn">Save Tasks</button>
+
+	<button id="deleteAllBtn">Delete All Tasks</button>
+    <br>
+    <span class="save-message1"></span>
+    <span class="save-message2"></span>
+    </div>
+
+   <footer>
+    <p class="m-0">&copy; 
+        <a class="text-white font-weight-bold"></a>Designed by 
+        <a class="text-blue font-weight-bold" href="https://www.linkedin.com/in/suneel-yekasiri-b6674623b/">
+            Suneel Yekasiri</a>
+    </p>
+   </footer>
+   <script src="script.js"></script>
+
+</body>
+</html>
