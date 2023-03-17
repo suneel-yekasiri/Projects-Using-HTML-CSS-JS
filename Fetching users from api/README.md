@@ -1,7 +1,3 @@
-# LGMVIP-TASK-02
-
-
-TASK -02 - CREATE A WEB APPLICATION USING create-react-app
 
 Technologies used : HTML,CSS,JS
 
