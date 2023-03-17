@@ -27,6 +27,7 @@ saveBtn.addEventListener('mouseout', () => {
 });
 
 
+
 const saveMessage2 = document.querySelector('.save-message2');
 deleteAllBtn.addEventListener('mouseover', () => {
  saveMessage2.textContent = 'Click Delete All Tasks to Delete your all tasks';
@@ -57,6 +58,7 @@ if (taskText.trim() === '') {
 const task = {
 text: taskText,
 completed: false
+
 };
 
 // Add the task to the tasks array
@@ -70,70 +72,71 @@ renderTasks();
 });
 
 // Function to render the tasks in the My Tasks section
+
 function renderTasks() {
-
-// Clear the existing tasks in the My Tasks section
-myTasks.innerHTML = '';
-
-// Loop through the tasks array and create HTML elements for each task
-tasks.forEach((task, index) => {
-const taskDiv = document.createElement('div');
-taskDiv.classList.add('task');
-const checkbox = document.createElement('input');
-checkbox.type = 'checkbox';
-checkbox.checked = task.completed;
-checkbox.addEventListener('change', () => {
-  
-// Update the completed status of the task and strike out the task text if it is completed
-task.completed = checkbox.checked;
-if (task.completed) {
-taskText.style.textDecoration = 'line-through';
-} else {
-taskText.style.textDecoration = 'none';
+  // Clear the existing tasks in the My Tasks section
+  myTasks.innerHTML = '';
+  // Loop through the tasks array and create HTML elements for each task
+  tasks.forEach((task, index) => {
+    const taskDiv = document.createElement('div');
+    taskDiv.classList.add('task');
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    // Set the checkbox status from the task object, or use false if it's not available
+    checkbox.checked = task.completed !== undefined ? task.completed : false;
+    checkbox.addEventListener('change', () => {
+      // Update the completed status of the task and strike out the task text if it is completed
+      task.completed = checkbox.checked;
+      if (task.completed) {
+        taskText.style.textDecoration = 'line-through';
+      } else {
+        taskText.style.textDecoration = 'none';
+      }
+      // Save the updated task status to local storage
+      localStorage.setItem('tasks', JSON.stringify(tasks));
+    });
+    taskDiv.appendChild(checkbox);
+    const taskText = document.createElement('span');
+    taskText.innerText = task.text;
+    // Strike out the task text if it is completed
+    if (task.completed) {
+      taskText.style.textDecoration = 'line-through';
+    }
+    taskDiv.appendChild(taskText);
+    const editBtn = document.createElement('button');
+    editBtn.innerText = 'Edit';
+    editBtn.addEventListener('click', () => {
+      // Prompt the user to edit the task text
+      const newText = prompt('Enter new task text', task.text);
+      // Update the task text if the user entered a new value
+      if (newText !== null && newText !== '') {
+        task.text = newText;
+        renderTasks();
+        // Save the updated tasks to local storage
+        localStorage.setItem('tasks', JSON.stringify(tasks));
+      }
+    });
+    taskDiv.appendChild(editBtn);
+    const deleteBtn = document.createElement('button');
+    deleteBtn.innerText = 'Delete';
+    deleteBtn.addEventListener('click', () => {
+      // Display a confirmation dialog box
+      const confirmed = confirm('Are you sure you want to delete this task?');
+      if (confirmed) {
+        // Remove the task from the tasks array and render the tasks
+        tasks.splice(index, 1);
+        renderTasks();
+        // Save the updated tasks to local storage
+        localStorage.setItem('tasks', JSON.stringify(tasks));
+      }
+    });
+    taskDiv.appendChild(deleteBtn);
+    // Add the task HTML element to the My Tasks section
+    myTasks.appendChild(taskDiv);
+  });
 }
-});
-taskDiv.appendChild(checkbox);
-const taskText = document.createElement('span');
-taskText.innerText = task.text;
-taskDiv.appendChild(taskText);
-const editBtn = document.createElement('button');
-editBtn.innerText = 'Edit';
-editBtn.addEventListener('click', () => {
-
-// Prompt the user to edit the task text
-const newText = prompt('Enter new task text', task.text);
-
-// Update the task text if the user entered a new value
-if (newText !== null && newText !== '') {
-task.text = newText;
-renderTasks();
-}
-});
-taskDiv.appendChild(editBtn);
-
-const deleteBtn = document.createElement('button');
-deleteBtn.innerText = 'Delete';
-
-deleteBtn.addEventListener('click', () => {
-// Remove the task from the tasks array and render the tasks
-
-const confirmDelete = confirm('Are you sure you want to delete this task?');
- // If the user clicks "OK", remove the task from the tasks array and render the tasks
-
- if (confirmDelete) {
-   tasks.splice(index, 1);
-   renderTasks();
-   localStorage.setItem('tasks', JSON.stringify(tasks));
- }
-});
 
 
-taskDiv.appendChild(deleteBtn);
-
-// Add the task HTML element to the My Tasks section
-myTasks.appendChild(taskDiv);
-});
-}
 
 // Add event listener to the save button
 saveBtn.addEventListener('click', () => {
@@ -141,7 +144,6 @@ saveBtn.addEventListener('click', () => {
 // Save the tasks to local storage
 localStorage.setItem('tasks', JSON.stringify(tasks));
 });
-
 
 // Add event listener to the delete all tasks button
 deleteAllBtn.addEventListener('click', () => {
