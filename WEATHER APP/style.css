@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
+
+/* Add styles to the form */
+ .form-inline {
+    justify-content: center;
+  }
+
+  .btn-primary {
+    border-radius: 0 10px 10px 0;
+  }
+  
+  /* Add styles to the weather container */
+  .weather {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    color: #333;
+    font-size: 30px;
+    text-align: center;
+  }
+  
+  /* Add styles to the weather icon */
+  .weather img {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+  }
+  
+  /* Add styles to the weather description */
+  .weather small {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+
+  /* Add styles to the form */
+form {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+  }
+  
+  .search {
+    font-weight:bold;
+    color: black;
+    font-size: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 100px;
+    text-align: center;
+  }
+  
+  body{
+    background-color: antiquewhite;
+  }
